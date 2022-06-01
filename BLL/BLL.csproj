@@ -48,7 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTOs\AuctionDTO.cs" />
-    <Compile Include="DTOs\CategoryDTO.cs" />
     <Compile Include="DTOs\LotDTO.cs" />
     <Compile Include="Exceptions\InvalidAuctionException.cs" />
     <Compile Include="Exceptions\InvalidCategoryException.cs" />

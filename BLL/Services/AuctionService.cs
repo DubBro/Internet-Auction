@@ -20,7 +20,7 @@ namespace BLL.Services
                 throw new InvalidAuctionException();
             }
 
-            if (GetAuctionByLot(auction.Lot) != null)
+            if (GetAuctionByLotId(auction.Lot.ID) != null)
             {
                 throw new InvalidAuctionException("ERROR: This auction already exists");
             }
@@ -45,7 +45,7 @@ namespace BLL.Services
 
             if (auction == null)
             {
-                throw new InvalidAuctionException();
+                throw new InvalidIdException();
             }
 
             if (auction.Started == false)
@@ -134,28 +134,21 @@ namespace BLL.Services
             return auction;
         }
 
-        public AuctionDTO GetAuctionByLot(LotDTO lotDTO)
+        public AuctionDTO GetAuctionByLotId(int id)
         {
-            if (lotDTO == null)
+            if (id <= 0)
             {
-                throw new InvalidLotException();
+                throw new InvalidIdException();
             }
 
-            var lot = database.Lots.Get(lotDTO.ID);
+            var lot = database.Lots.Get(id);
 
             if (lot == null)
             {
-                throw new InvalidLotException();
+                throw new InvalidIdException();
             }
 
-            var auction = mapper.Map<Auction, AuctionDTO>(database.Auctions.GetAuctionByLot(lot));
-
-            if (auction == null)
-            {
-                throw new InvalidAuctionException();
-            }
-
-            return auction;
+            return mapper.Map<Auction, AuctionDTO>(database.Auctions.GetAuctionByLotId(id));
         }
 
         public IEnumerable<AuctionDTO> GetAuctions()

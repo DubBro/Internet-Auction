@@ -20,8 +20,6 @@ namespace BLL.Services
                 throw new InvalidLotException();
             }
 
-            lot.Sold = false;
-
             database.Lots.Add(mapper.Map<LotDTO, Lot>(lot));
             database.Commit();
         }
@@ -52,14 +50,14 @@ namespace BLL.Services
             return mapper.Map<IEnumerable<Lot>, IEnumerable<LotDTO>>(database.Lots.GetAll());
         }
 
-        public IEnumerable<LotDTO> GetLotsByCategory(string categoryName)
+        public IEnumerable<LotDTO> GetLotsByCategory(string category)
         {
-            if (categoryName == null)
+            if (category == null)
             {
                 throw new InvalidCategoryException();
             }
 
-            return mapper.Map<IEnumerable<Lot>, IEnumerable<LotDTO>>(database.Lots.GetLotsByCategory(categoryName));
+            return mapper.Map<IEnumerable<Lot>, IEnumerable<LotDTO>>(database.Lots.GetLotsByCategory(category));
         }
 
         public IEnumerable<LotDTO> GetLotsByName(string name)
@@ -69,7 +67,14 @@ namespace BLL.Services
                 throw new InvalidNameException();
             }
 
-            return mapper.Map<IEnumerable<Lot>, IEnumerable<LotDTO>>(database.Lots.GetLotsByName(name));
+            var lots = mapper.Map<IEnumerable<Lot>, IEnumerable<LotDTO>>(database.Lots.GetLotsByName(name));
+
+            if (lots == null)
+            {
+                throw new InvalidNameException();
+            }
+
+            return lots;
         }
 
         public IEnumerable<LotDTO> GetNotSoldLots()
@@ -99,7 +104,7 @@ namespace BLL.Services
             lot.Name = lotDTO.Name;
             lot.Owner = lotDTO.Owner;
             lot.Sold = lotDTO.Sold;
-            lot.Category = mapper.Map<CategoryDTO, Category>(lotDTO.Category);
+            lot.Category = lotDTO.Category;
             lot.Details = lotDTO.Details;
 
             database.Lots.Update(lot);

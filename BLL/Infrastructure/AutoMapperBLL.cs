@@ -12,7 +12,6 @@ namespace BLL.Infrastructure
             {
                 cfg.CreateMap<Lot, LotDTO>().ReverseMap();
                 cfg.CreateMap<Auction, AuctionDTO>().ReverseMap();
-                cfg.CreateMap<Category, CategoryDTO>().ReverseMap();
             });
 
             return new Mapper(config);

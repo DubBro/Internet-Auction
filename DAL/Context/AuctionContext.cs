@@ -12,6 +12,5 @@ namespace DAL.Context
 
         public DbSet<Lot> Lots { get; set; }
         public DbSet<Auction> Auctions { get; set; }
-        public DbSet<Category> Categories { get; set; }
     }
 }

@@ -7,6 +7,6 @@
         public string Details { get; set; }
         public string Owner { get; set; }
         public bool Sold { get; set; }
-        public CategoryDTO Category { get; set; }
+        public string Category { get; set; }
     }
 }

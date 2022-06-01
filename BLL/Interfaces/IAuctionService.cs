@@ -7,7 +7,7 @@ namespace BLL.Interfaces
     {
         void AddAuction(AuctionDTO auction);
         AuctionDTO GetAuction(int id);
-        AuctionDTO GetAuctionByLot(LotDTO lot);
+        AuctionDTO GetAuctionByLotId(int id);
         IEnumerable<AuctionDTO> GetAuctions();
         void OpenAuction(int id);
         void CloseAuction(int id);

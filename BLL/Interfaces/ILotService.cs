@@ -8,7 +8,7 @@ namespace BLL.Interfaces
         void AddLot(LotDTO lot);
         LotDTO GetLot(int id);
         IEnumerable<LotDTO> GetLots();
-        IEnumerable<LotDTO> GetLotsByCategory(string categoryName);
+        IEnumerable<LotDTO> GetLotsByCategory(string category);
         IEnumerable<LotDTO> GetLotsByName(string name);
         IEnumerable<LotDTO> GetSoldLots();
         IEnumerable<LotDTO> GetNotSoldLots();

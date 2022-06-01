@@ -10,7 +10,6 @@ namespace DAL.Repositories
 
         private ILotRepository lots;
         private IAuctionRepository auctions;
-        private ICategoryRepository categories;
 
         private bool disposed;
 
@@ -40,18 +39,6 @@ namespace DAL.Repositories
                     auctions = new AuctionRepository(context);
                 }
                 return auctions;
-            }
-        }
-
-        public ICategoryRepository Categories
-        {
-            get
-            {
-                if (categories == null)
-                {
-                    categories = new CategoryRepository(context);
-                }
-                return categories;
             }
         }
 

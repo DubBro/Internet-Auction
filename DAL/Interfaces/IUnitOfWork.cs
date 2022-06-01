@@ -6,7 +6,6 @@ namespace DAL.Interfaces
     {
         ILotRepository Lots { get; }
         IAuctionRepository Auctions { get; }
-        ICategoryRepository Categories { get; }
 
         void Commit();
     }

@@ -11,6 +11,6 @@ namespace DAL.Entities
         public virtual string Details { get; set; }
         public virtual string Owner { get; set; }
         public virtual bool Sold { get; set; }
-        public virtual Category Category { get; set; }
+        public virtual string Category { get; set; }
     }
 }

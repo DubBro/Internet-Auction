@@ -14,9 +14,9 @@ namespace DAL.Repositories
             this.context = context;
         }
 
-        public Auction GetAuctionByLot(Lot lot)
+        public Auction GetAuctionByLotId(int id)
         {
-            return context.Auctions.Where(a => a.Lot == lot).Single();
+            return context.Auctions.Where(a => a.Lot.ID == id).FirstOrDefault();
         }
     }
 }

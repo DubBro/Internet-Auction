@@ -15,14 +15,14 @@ namespace DAL.Repositories
             this.context = context;
         }
 
-        public IEnumerable<Lot> GetLotsByCategory(string categoryName)
+        public IEnumerable<Lot> GetLotsByCategory(string category)
         {
-            return context.Lots.Where(l => l.Category.Name == categoryName).ToList();
+            return context.Lots.Where(l => l.Category == category).ToList();
         }
 
-        public IEnumerable<Lot> GetLotsByName(string Name)
+        public IEnumerable<Lot> GetLotsByName(string name)
         {
-            return context.Lots.Where(l => l.Name == Name).ToList();
+            return context.Lots.Where(l => l.Name == name).ToList();
         }
 
         public IEnumerable<Lot> GetNotSoldLots()
