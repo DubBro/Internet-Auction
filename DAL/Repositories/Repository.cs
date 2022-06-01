@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace DAL.Repositories
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
+    public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         private DbContext context;
         private DbSet<TEntity> dbSet;
