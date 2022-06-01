@@ -1,7 +1,6 @@
 ﻿using DAL.Context;
 using DAL.Entities;
 using DAL.Interfaces;
-using System.Linq;
 
 namespace DAL.Repositories
 {
@@ -12,11 +11,6 @@ namespace DAL.Repositories
         public AuctionRepository(AuctionContext context) : base(context)
         {
             this.context = context;
-        }
-
-        public Auction GetAuctionByLotId(int id)
-        {
-            return context.Auctions.Where(a => a.Lot.ID == id).FirstOrDefault();
         }
     }
 }

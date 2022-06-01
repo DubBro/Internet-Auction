@@ -8,5 +8,7 @@
         public string Owner { get; set; }
         public bool Sold { get; set; }
         public string Category { get; set; }
+
+        public AuctionDTO Auction { get; set; }
     }
 }

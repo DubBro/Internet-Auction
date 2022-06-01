@@ -20,6 +20,8 @@ namespace BLL.Services
                 throw new InvalidLotException();
             }
 
+            lot.Auction = new AuctionDTO();
+
             database.Lots.Add(mapper.Map<LotDTO, Lot>(lot));
             database.Commit();
         }
@@ -31,6 +33,7 @@ namespace BLL.Services
                 throw new InvalidIdException();
             }
 
+            database.Auctions.Delete(id);
             database.Lots.Delete(id);
             database.Commit();
         }
@@ -42,7 +45,14 @@ namespace BLL.Services
                 throw new InvalidIdException();
             }
 
-            return mapper.Map<Lot, LotDTO>(database.Lots.Get(id));
+            var lot = mapper.Map<Lot, LotDTO>(database.Lots.Get(id));
+
+            if (lot == null)
+            {
+                throw new InvalidIdException();
+            }
+
+            return lot;
         }
 
         public IEnumerable<LotDTO> GetLots()
@@ -67,14 +77,7 @@ namespace BLL.Services
                 throw new InvalidNameException();
             }
 
-            var lots = mapper.Map<IEnumerable<Lot>, IEnumerable<LotDTO>>(database.Lots.GetLotsByName(name));
-
-            if (lots == null)
-            {
-                throw new InvalidNameException();
-            }
-
-            return lots;
+            return mapper.Map<IEnumerable<Lot>, IEnumerable<LotDTO>>(database.Lots.GetLotsByName(name));
         }
 
         public IEnumerable<LotDTO> GetNotSoldLots()

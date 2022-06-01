@@ -3,8 +3,6 @@ using BLL.DTOs;
 using BLL.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Http;
 using WebAPI.App_Start;
 using WebAPI.Models;
@@ -22,14 +20,13 @@ namespace WebAPI.Controllers
             mapper = AutoMapperConfig.InitializeAutoMapper();
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("api/auction")]
-        public IHttpActionResult AddAuction([FromBody]AuctionViewModel auction)
+        public IHttpActionResult GetAuction(int id)
         {
             try
             {
-                service.AddAuction(mapper.Map<AuctionViewModel, AuctionDTO>(auction));
-                return GetAuctions();
+                return Ok(mapper.Map<AuctionDTO, AuctionViewModel>(service.GetAuction(id)));
             }
             catch (Exception ex)
             {
@@ -44,20 +41,6 @@ namespace WebAPI.Controllers
             try
             {
                 return Ok(mapper.Map<IEnumerable<AuctionDTO>, IEnumerable<AuctionViewModel>>(service.GetAuctions()));
-            }
-            catch (Exception ex)
-            {
-                return InternalServerError(ex);
-            }
-        }
-
-        [HttpGet]
-        [Route("api/auction")]
-        public IHttpActionResult GetAuctionByLotId(int lotId)
-        {
-            try
-            {
-                return Ok(mapper.Map<AuctionDTO, AuctionViewModel>(service.GetAuctionByLotId(lotId)));
             }
             catch (Exception ex)
             {

@@ -12,5 +12,7 @@ namespace DAL.Entities
         public virtual string Owner { get; set; }
         public virtual bool Sold { get; set; }
         public virtual string Category { get; set; }
-    }
+
+        public virtual Auction Auction { get; set; }
+}
 }

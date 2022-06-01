@@ -13,22 +13,6 @@ namespace BLL.Services
         {
         }
 
-        public void AddAuction(AuctionDTO auction)
-        {
-            if (auction == null || auction.Bid < 0 || auction.Leader != null || auction.Ended == true || database.Lots.Get(auction.Lot.ID) == null)
-            {
-                throw new InvalidAuctionException();
-            }
-
-            if (GetAuctionByLotId(auction.Lot.ID) != null)
-            {
-                throw new InvalidAuctionException("ERROR: This auction already exists");
-            }
-
-            database.Auctions.Add(mapper.Map<AuctionDTO, Auction>(auction));
-            database.Commit();
-        }
-
         public void Bet(int id, string customerName, int bid)
         {
             if (id <= 0)
@@ -106,17 +90,6 @@ namespace BLL.Services
             database.Commit();
         }
 
-        public void Delete(int id)
-        {
-            if (id <= 0) 
-            {
-                throw new InvalidIdException();
-            }
-
-            database.Auctions.Delete(id);
-            database.Commit();
-        }
-
         public AuctionDTO GetAuction(int id)
         {
             if (id <= 0)
@@ -132,23 +105,6 @@ namespace BLL.Services
             }
 
             return auction;
-        }
-
-        public AuctionDTO GetAuctionByLotId(int id)
-        {
-            if (id <= 0)
-            {
-                throw new InvalidIdException();
-            }
-
-            var lot = database.Lots.Get(id);
-
-            if (lot == null)
-            {
-                throw new InvalidIdException();
-            }
-
-            return mapper.Map<Auction, AuctionDTO>(database.Auctions.GetAuctionByLotId(id));
         }
 
         public IEnumerable<AuctionDTO> GetAuctions()

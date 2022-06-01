@@ -3,8 +3,6 @@ using BLL.DTOs;
 using BLL.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Http;
 using WebAPI.App_Start;
 using WebAPI.Models;
@@ -108,12 +106,42 @@ namespace WebAPI.Controllers
 
         [HttpPost]
         [Route("api/lot")]
-        public IHttpActionResult AddLot([FromBody] LotViewModel lot)
+        public IHttpActionResult AddLot([FromBody]LotViewModel lot)
         {
             try
             {
                 service.AddLot(mapper.Map<LotViewModel, LotDTO>(lot));
-                return GetLots();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+
+        [HttpDelete]
+        [Route("api/lot")]
+        public IHttpActionResult DeleteLot(int id)
+        {
+            try
+            {
+                service.DeleteLot(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+
+        [HttpPut]
+        [Route("api/lot")]
+        public IHttpActionResult UpdateLot([FromBody]LotViewModel lot)
+        {
+            try
+            {
+                service.UpdateLot(mapper.Map<LotViewModel, LotDTO>(lot));
+                return Ok();
             }
             catch (Exception ex)
             {
