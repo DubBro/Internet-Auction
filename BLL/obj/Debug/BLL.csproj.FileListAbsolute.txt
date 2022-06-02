@@ -1,0 +1,16 @@
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\BLL\bin\Debug\BLL.dll
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\BLL\bin\Debug\BLL.pdb
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\BLL\bin\Debug\AutoMapper.dll
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\BLL\bin\Debug\DAL.dll
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\BLL\bin\Debug\Ninject.dll
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\BLL\bin\Debug\EntityFramework.dll
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\BLL\bin\Debug\DAL.pdb
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\BLL\bin\Debug\DAL.dll.config
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\BLL\bin\Debug\AutoMapper.xml
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\BLL\bin\Debug\Ninject.xml
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\BLL\bin\Debug\EntityFramework.xml
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\BLL\obj\Debug\BLL.dll
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\BLL\obj\Debug\BLL.pdb

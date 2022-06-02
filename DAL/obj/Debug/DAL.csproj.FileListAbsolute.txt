@@ -1,0 +1,10 @@
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\DAL\bin\Debug\DAL.dll.config
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\DAL\bin\Debug\DAL.dll
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\DAL\bin\Debug\DAL.pdb
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\DAL\bin\Debug\EntityFramework.dll
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\DAL\bin\Debug\EntityFramework.xml
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\DAL\obj\Debug\DAL.dll
+D:\main\Programming tools\MS VS 2019\workspace\Internet Auction\DAL\obj\Debug\DAL.pdb
